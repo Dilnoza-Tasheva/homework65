@@ -89,9 +89,9 @@ const EditPage = () => {
 
   return (
     <form onSubmit={onSubmitForm}>
-      <h3>Edit the page</h3>
+      <h3 className="fs-3 fw-semibold mb-4">Edit the page</h3>
 
-      <select className="form-select" aria-label="select page" onChange={onSelectPage}>
+      <select className="form-select mb-3 " aria-label="select page" onChange={onSelectPage}>
         <option selected>Select a page</option>
         {pages.map((page) => (
           <option key={page.id} value={page.id}>{page.title}</option>
@@ -124,7 +124,7 @@ const EditPage = () => {
         />
       </div>
 
-      <button className="btn btn-primary">Save</button>
+      <button className="btn btn-outline-success">Save</button>
 
     </form>
   );

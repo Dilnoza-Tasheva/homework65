@@ -15,7 +15,7 @@ const App = () => {
           <Routes>
             <Route path="/pages/:pageName" element={<Pages/>}/>
             <Route path="/pages/admin" element={<EditPage/>}/>
-            <Route path="/" element={<p>Welcome to the main page</p>}/>
+            <Route path="/" element={<p className="fs-5 fw-semibold">Welcome to the main page</p>}/>
             <Route path="*" element={<h4>Not found</h4>}/>
           </Routes>
         </div>

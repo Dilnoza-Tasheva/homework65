@@ -8,7 +8,7 @@ interface Props {
 const DisplayPage: React.FC<Props> = ({title, content}) => {
   return (
     <div>
-      <h2>{title}</h2>
+      <h2 className="fs-3 fw-semibold">{title}</h2>
       <p>{content}</p>
     </div>
   );
