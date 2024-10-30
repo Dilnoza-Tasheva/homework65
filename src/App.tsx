@@ -1,11 +1,6 @@
 import NavBar from './Components/NavBar/NavBar.tsx';
 import { Route, Routes } from 'react-router-dom';
-import Home from './Containers/Home/Home.tsx';
-import About from './Containers/About/About.tsx';
-import Contacts from './Containers/Contacts/Contacts.tsx';
-import Services from './Containers/Services/Services.tsx';
-import Membership from './Containers/Membership/Membership.tsx';
-import Login from './Containers/Login/Login.tsx';
+import Pages from './Containers/Pages/Pages.tsx';
 import Admin from './Containers/Admin/Admin.tsx';
 
 const App = () => {
@@ -18,15 +13,10 @@ const App = () => {
       <main className="container mt-4">
         <div className="row">
           <Routes>
-            <Route path="/" element={<Home/>}/>
-            <Route path="/pages/services" element={<Services/>}/>
-            <Route path="/pages/membership" element={<Membership/>}/>
-            <Route path="/pages/login" element={<Login/>}/>
-            <Route path="/pages/about" element={<About/>}/>
+            <Route path="/pages/:pageName" element={<Pages/>}/>
             <Route path="/pages/admin" element={<Admin/>}/>
+            <Route path="/" element={<p>Welcome to the main page</p>}/>
             <Route path="*" element={<h4>Not found</h4>}/>
-            <Route path="/pages/contacts" element={<Contacts/>}>
-            </Route>
           </Routes>
         </div>
       </main>
