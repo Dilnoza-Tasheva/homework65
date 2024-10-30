@@ -6,6 +6,7 @@ import Contacts from './Containers/Contacts/Contacts.tsx';
 import Services from './Containers/Services/Services.tsx';
 import Membership from './Containers/Membership/Membership.tsx';
 import Login from './Containers/Login/Login.tsx';
+import Admin from './Containers/Admin/Admin.tsx';
 
 const App = () => {
 
@@ -22,6 +23,7 @@ const App = () => {
             <Route path="/pages/membership" element={<Membership/>}/>
             <Route path="/pages/login" element={<Login/>}/>
             <Route path="/pages/about" element={<About/>}/>
+            <Route path="/pages/admin" element={<Admin/>}/>
             <Route path="*" element={<h4>Not found</h4>}/>
             <Route path="/pages/contacts" element={<Contacts/>}>
             </Route>
