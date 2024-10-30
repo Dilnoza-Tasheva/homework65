@@ -10,6 +10,7 @@ const Pages = () => {
   const [pages, setPages] = useState<IPage[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const {pageName} = useParams<{pageName: string}>();
+
   const fetchData = useCallback(async () => {
     try{
       setLoading(true);
