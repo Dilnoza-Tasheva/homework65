@@ -4,12 +4,12 @@ import axiosApi from '../../axiosApi.ts';
 import AxiosApi from '../../axiosApi.ts';
 import * as React from 'react';
 import { useNavigate } from 'react-router-dom';
+import Loader from '../Loader/Loader.tsx';
 
 const initialForm = {
   title: '',
   content: '',
 };
-
 
 
 const EditPage = () => {
@@ -31,7 +31,7 @@ const EditPage = () => {
     e.preventDefault();
 
     await axiosApi.put(`pages/${selectedPage}.json`, {...form});
-    navigate('/');
+    navigate(`/pages/${selectedPage}`);
   };
 
   const onSelectPage = async(e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -82,6 +82,10 @@ const EditPage = () => {
   useEffect(() => {
     void fetchPages();
   },[fetchPages]);
+
+  if (loading) {
+    return <Loader/>;
+  }
 
   return (
     <form onSubmit={onSubmitForm}>
