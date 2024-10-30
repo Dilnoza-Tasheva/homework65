@@ -1,20 +1,23 @@
 import { useCallback, useEffect, useState } from 'react';
 import { IPageForm } from '../../types';
 import axiosApi from '../../axiosApi.ts';
-import { useNavigate } from 'react-router-dom';
 import AxiosApi from '../../axiosApi.ts';
+import * as React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const initialForm = {
   title: '',
   content: '',
 };
 
+
+
 const EditPage = () => {
-  const navigate = useNavigate();
   const [form, setForm] = useState<IPageForm>({...initialForm});
   const [selectedPage, setSelectedPage] = useState('');
   const [pages, setPages] = useState<{id: string; title: string}[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
+  const navigate = useNavigate();
 
   const onChangeField = (e: React.ChangeEvent<HTMLInputElement>) => {
     const {name, value} = e.target;
@@ -27,7 +30,7 @@ const EditPage = () => {
   const onSubmitForm = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    await axiosApi.put(`quotes/${selectedPage}.json`, {...form});
+    await axiosApi.put(`pages/${selectedPage}.json`, {...form});
     navigate('/');
   };
 
